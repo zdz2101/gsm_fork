@@ -24,6 +24,10 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
 
     steps:
+      - name: Debug API Call Response
+        run: |
+          curl -H "Authorization: token ${{ secrets.TESTTOKEN }}" https://api.github.com/user
+
       - uses: actions/checkout@v4
 
       - uses: r-lib/actions/setup-pandoc@v2
