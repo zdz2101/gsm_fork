@@ -57,6 +57,7 @@ Imports:
     utils,
     yaml
 Suggests:
+    clindata,
     covr,
     DT,
     fontawesome (>= 0.2.2),
@@ -81,6 +82,7 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes:
+    clindata=Gilead-BioStats/clindata,
     pkgdownpractice=zdz2101/pkgdown_practice@main
 Config/testthat/edition: 3
 Config/testthat/parallel: true
