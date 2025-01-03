@@ -69,7 +69,6 @@ Suggests:
     lubridate,
     pander,
     pkgdown,
-    pkgdown_practice,
     riskmetric,
     rmarkdown,
     roxygen2,
