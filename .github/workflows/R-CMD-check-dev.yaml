@@ -21,6 +21,7 @@ jobs:
 
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      REPOPAT: ${{ secrets.TESTTOKEN }}
       R_KEEP_PKG_SOURCE: yes
 
     steps:
@@ -38,6 +39,11 @@ jobs:
         with:
           extra-packages: any::rcmdcheck, pkgdownpractice=?ignore
           needs: check
+
+      - name: Install private repos with remotes
+        run: |
+          Rscript -e 'install.packages("remotes")'
+          Rscript -e 'remotes::install_github("zdz2101/pkgdown_practice", ref = "main", auth_token = Sys.getenv("REPOPAT"))'
 
       - uses: r-lib/actions/check-r-package@v2
         with:
